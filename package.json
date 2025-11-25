@@ -1,0 +1,19 @@
+{
+    "name": "eslint-plugin-import-issue-1",
+    "packageManager": "yarn@4.0.2",
+    "type": "module",
+    "scripts": {
+        "lint:ok": "eslint ./src/ok.js",
+        "lint:not-ok": "eslint ./src/not-ok.js"
+    },
+    "files": [],
+    "dependencies": {
+        "figures": "6.1.0",
+        "inquirer": "12.5.2"
+    },
+    "devDependencies": {
+        "eslint": "8.57.1",
+        "eslint-import-resolver-exports": "patch:eslint-import-resolver-exports@npm%3A1.0.0-beta.5#~/.yarn/patches/eslint-import-resolver-exports-npm-1.0.0-beta.5-4ad6cd8d6f.patch",
+        "eslint-plugin-import": "2.31.0"
+    }
+}

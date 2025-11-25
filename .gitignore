@@ -1,0 +1,112 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+### Cache ###
+.eslintcache
+
+### Yarn 2 (PnP + Zero-Installs) ###
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+!.yarn/cache
+
+### WebStorm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific Stuff
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/**/usage.statistics.xml
+**/.idea/**/dictionaries
+**/.idea/**/shelf
+**/.idea/**/compiler.xml
+**/.idea/**/material_theme_project_new.xml
+
+# User-specific Stuff (AWS)
+**/.idea/**/aws.xml
+
+# User-specific Stuff (Copilot)
+**/.idea/**/copilot.data.migration.*
+
+# Generated Files
+**/.idea/**/contentModel.xml
+**/.idea/nx-*.xml
+
+# Sensitive or High-churn Files
+**/.idea/dataSources.xml
+**/.idea/**/dataSources/
+**/.idea/**/dataSources.ids
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/**/dynamic.xml
+**/.idea/**/uiDesigner.xml
+**/.idea/**/dbnavigator.xml
+
+# Gradle
+**/.idea/**/gradle.xml
+**/.idea/**/libraries
+
+# File-based Project Format
+*.iws
+
+# JIRA Plug-in
+atlassian-ide-plugin.xml
+
+### VS-Code ###
+.vscode/mcp.json
+
+### Linux ###
+*~
+**/.fuse_hidden*
+**/.directory
+**/.Trash-*
+**/.nfs*
+
+### macOS ###
+**/.DS_Store
+**/.AppleDouble
+**/.LSOverride
+**/._*
+**/.DocumentRevisions-V100
+**/.fseventsd
+**/.Spotlight-V100
+**/.TemporaryItems
+**/.Trashes
+**/.VolumeIcon.icns
+**/.com.apple.timemachine.donotpresent
+**/.AppleDB
+**/.AppleDesktop
+**/.apdisk
+Network Trash Folder
+Temporary Items
+
+### Windows ###
+*.stackdump
+$RECYCLE.BIN/
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+### Node ###
+**/.npm
+**/.node_repl_history
+**/.yarn-integrity
+*.log
+*.pid
+*.seed
+*.pid.lock
+node_modules/
+jspm_packages/
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+### Misc ###
+crash.log
+.tmp

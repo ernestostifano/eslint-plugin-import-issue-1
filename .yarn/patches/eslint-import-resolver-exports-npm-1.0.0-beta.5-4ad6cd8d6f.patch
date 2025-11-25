@@ -1,0 +1,74 @@
+diff --git a/index.js b/index.js
+index 29097537e4aa5490f0a46a6835535df636a762ef..de6fedf3042a075172767a7d072296b8a1067a6a 100644
+--- a/index.js
++++ b/index.js
+@@ -10,7 +10,10 @@ const fs = require("node:fs");
+  * @param {import("resolve.exports").Options} config config
+  */
+ const resolve = (source, file, config) => {
++  console.log('SOURCE', source);
++  console.log('FILE', file);
+   if (source.startsWith(".") || source.startsWith("/")) {
++    console.log();
+     return { found: false };
+   }
+ 
+@@ -21,7 +24,9 @@ const resolve = (source, file, config) => {
+ 
+   try {
+     const pkgFile = findPackageJson(path.dirname(file), packageName);
++    console.log('PKG', pkgFile);
+     if (!pkgFile) {
++      console.log();
+       return { found: false };
+     }
+ 
+@@ -33,15 +38,25 @@ const resolve = (source, file, config) => {
+       source,
+       config
+     );
++    console.log('RESOLVED', resolved);
+ 
+     if (!resolved || !resolved.length) {
++      console.log();
+       return { found: false };
+     }
+ 
+     const moduleId = path.resolve(path.dirname(pkgFile), resolved[0]);
+ 
++    console.log('OUTPUT', moduleId);
++    console.log();
+     return { found: true, path: moduleId };
+   } catch (err) {
++    if (err.message.startsWith('No known conditions for')) {
++      console.log('NO EXPORTS MATCH');
++    } else {
++      console.log('ERROR', err);
++    }
++    console.log();
+     return { found: false };
+   }
+ };
+@@ -53,7 +64,9 @@ const resolve = (source, file, config) => {
+  * @param {string} packageName
+  */
+ function findPackageJson(filepath, packageName) {
++  console.log('LOOKING PKG', filepath, packageName);
+   for (;;) {
++    console.log('LOOKING AT:', filepath);
+     const pkgFile = path.join(
+       filepath,
+       "node_modules",
+@@ -61,10 +74,12 @@ function findPackageJson(filepath, packageName) {
+       "package.json"
+     );
+     if (fs.existsSync(pkgFile)) {
++      console.log('FOUND');
+       return pkgFile;
+     }
+     const dir = path.dirname(filepath);
+     if (dir === filepath) {
++      console.log('NOT FOUND');
+       return null;
+     }
+     filepath = dir;
